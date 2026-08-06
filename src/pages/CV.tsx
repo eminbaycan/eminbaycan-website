@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { cvData, Language } from '../data';
-import { Mail, MapPin, Linkedin, Phone, ArrowUp, Printer } from 'lucide-react';
+import { Mail, MapPin, Linkedin, ArrowUp, Printer } from 'lucide-react';
 
 interface CVProps {
   lang: Language;
@@ -49,7 +49,7 @@ export function CV({ lang }: CVProps) {
           <div className="flex justify-center items-center gap-2">
             <span>{data.location}</span>
             <span className="font-bold opacity-60">|</span>
-            <span>{data.phone}</span>
+            
           </div>
           <div className="flex justify-center items-center gap-2 mt-1">
             <span>{data.email}</span>
