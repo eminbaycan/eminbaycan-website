@@ -1,108 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seni Çok Seviyorum ❤️</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            text-align: center;
-            z-index: 10;
-            backdrop-filter: blur(8px);
-            max-width: 90%;
-            width: 420px;
-        }
-        .cat-main {
-            font-size: 80px;
-            animation: bounce 1.5s infinite alternate ease-in-out;
-            margin-bottom: 10px;
-        }
-        h1 {
-            color: #d63384;
-            font-size: 30px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        p {
-            color: #6c757d;
-            font-size: 18px;
-        }
-        .heart {
-            color: #e63946;
-            display: inline-block;
-            animation: pulse 1s infinite;
-        }
-        
-        /* Arka planda uçuşan kediler */
-        .floating-cat {
-            position: absolute;
-            font-size: 40px;
-            user-select: none;
-            animation: floatUp 6s linear infinite;
-        }
-        .c1 { left: 10%; animation-delay: 0s; }
-        .c2 { left: 30%; animation-delay: 2s; font-size: 55px; }
-        .c3 { left: 55%; animation-delay: 1s; }
-        .c4 { left: 75%; animation-delay: 3s; font-size: 48px; }
-        .c5 { left: 90%; animation-delay: 4s; }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-15px); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
-        }
-        @keyframes floatUp {
-            0% {
-                bottom: -60px;
-                opacity: 0;
-                transform: translateX(0) rotate(0deg);
-            }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% {
-                bottom: 105vh;
-                opacity: 0;
-                transform: translateX(30px) rotate(20deg);
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="floating-cat c1">🐱</div>
-    <div class="floating-cat c2">😻</div>
-    <div class="floating-cat c3">🐾</div>
-    <div class="floating-cat c4">😺</div>
-    <div class="floating-cat c5">😽</div>
-
-    <div class="container">
-        <div class="cat-main">😻</div>
-        <h1>Hanım Seni Çok Seviyorum <span class="heart">❤️</span></h1>
-        <p>Dünyanın en tatlı hanımına özel... 🐾</p>
-    </div>
-
-</body>
+  <head>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8108765812b64c29b7e56aac3e17aed3"}'></script><!-- End Cloudflare Web Analytics -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Emin Baycan - IT Assistant Specialist & Network Systems Professional CV & Portfolio" />
+    <meta name="keywords" content="Emin Baycan, IT, Bilgi İşlem, Network, Ağ, CV, Portfolio, Ankara" />
+    <meta name="author" content="Emin Baycan" />
+    <title>Emin Baycan | IT Professional</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
