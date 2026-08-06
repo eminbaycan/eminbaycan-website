@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 import Lenis from 'lenis';
 import { useEasterEgg } from '../hooks/useEasterEgg';
 import { Confetti } from './Confetti';
@@ -11,9 +11,68 @@ interface LayoutProps {
 }
 
 export function Layout({ lang, onLangChange }: LayoutProps) {
+  const navigate = useNavigate();
   const { handleThemeClick, showConfetti } = useEasterEgg();
   const [lastLangToggle, setLastLangToggle] = useState(0);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    if (toastMessage) {
+      timeoutId = setTimeout(() => setToastMessage(null), 3000);
+    }
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [toastMessage]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) ||
+        (e.ctrlKey && (e.key === 'U' || e.key === 'u'))
+      ) {
+        e.preventDefault();
+        navigate('/caught');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [navigate]);
+
+  useEffect(() => {
+    const handleMouseUp = async () => {
+      const selection = window.getSelection();
+      if (!selection) return;
+
+      const text = selection.toString().trim();
+      if (!text) return;
+
+      if (text.length > 10) {
+        try {
+          await navigator.clipboard.writeText(text);
+          setToastMessage(lang === 'tr' ? 'Metin başarıyla kopyalandı 📋' : 'Text copied to clipboard 📋');
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      }
+    };
+
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchend', handleMouseUp);
+
+    return () => {
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchend', handleMouseUp);
+    };
+  }, [lang]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -23,9 +82,7 @@ export function Layout({ lang, onLangChange }: LayoutProps) {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      smoothTouch: false,
       touchMultiplier: 2,
-      infinite: false,
     });
 
     let animationFrameId: number;
@@ -47,7 +104,6 @@ export function Layout({ lang, onLangChange }: LayoutProps) {
     const now = Date.now();
     if (now - lastLangToggle < 3000) {
       setToastMessage(lang === 'tr' ? 'Lütfen 3 saniye bekleyin.' : 'Please wait 3 seconds.');
-      setTimeout(() => setToastMessage(null), 1500);
       return;
     }
     
@@ -60,15 +116,17 @@ export function Layout({ lang, onLangChange }: LayoutProps) {
       {showConfetti && <Confetti />}
       
       {toastMessage && (
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 bg-[var(--border)] text-inherit px-4 py-2 rounded shadow-md z-50 animate-in fade-in slide-in-from-top-4 border border-[var(--border)]">
+        <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-[var(--border)] text-inherit px-6 py-3 rounded-full shadow-lg z-50 animate-in fade-in slide-in-from-top-4 border border-[var(--border)] font-medium tracking-wide">
           {toastMessage}
         </div>
       )}
 
       <header className="py-4 sm:h-20 sm:py-0 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-12 border-b border-[var(--border)] z-40 bg-[var(--bg)]/80 backdrop-blur-md print:hidden gap-4 sm:gap-0">
-        <Link to="/" className="flex flex-col hover:opacity-80 transition-opacity text-center sm:text-left">
-          <span className="text-xl font-bold tracking-tighter uppercase">Emin Baycan</span>
-          <span className="text-[10px] uppercase tracking-[0.3em] opacity-50">IT Specialist</span>
+        <Link to="/" className="flex items-center hover:opacity-80 transition-opacity text-center sm:text-left">
+          <div className="flex flex-col">
+            <span className="text-xl font-bold tracking-tighter uppercase">Emin Baycan</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] opacity-50">IT Specialist</span>
+          </div>
         </Link>
           
         <nav className="flex items-center gap-3 sm:gap-6 flex-wrap justify-center">

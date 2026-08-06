@@ -1,6 +1,7 @@
 import { cvData, Language } from '../data';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Linkedin, Phone } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react';
+import { ObfuscatedContact } from '../components/ObfuscatedContact';
 
 interface HomeProps {
   lang: Language;
@@ -32,12 +33,13 @@ export function Home({ lang }: HomeProps) {
             >
               {lang === 'tr' ? 'CV\'yi Görüntüle' : 'View Resume'}
             </Link>
-            <a
-              href="mailto:cv@eminbaycan.com"
-              className="text-[11px] underline underline-offset-4 opacity-70 hover:opacity-100 transition-opacity uppercase tracking-wider"
+            <ObfuscatedContact 
+              encodedValue={data.email} 
+              type="email" 
+              className="text-[11px] underline underline-offset-4 opacity-70 hover:opacity-100 transition-opacity uppercase tracking-wider" 
             >
               {lang === 'tr' ? 'İletişime Geç' : 'Contact Me'}
-            </a>
+            </ObfuscatedContact>
           </div>
         </div>
       </section>
@@ -51,14 +53,8 @@ export function Home({ lang }: HomeProps) {
               <span className="text-xs">{data.location}</span>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="w-4 h-4 opacity-50" />
-              <span className="text-xs">{data.phone}</span>
-            </div>
-            <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 opacity-50" />
-              <a href={`mailto:${data.email}`} className="text-xs hover:text-[var(--primary)] transition-colors">
-                {data.email}
-              </a>
+              <ObfuscatedContact encodedValue={data.email} type="email" className="text-xs hover:text-[var(--primary)] transition-colors" />
             </div>
             <div className="flex items-center gap-3">
               <Linkedin className="w-4 h-4 opacity-50" />

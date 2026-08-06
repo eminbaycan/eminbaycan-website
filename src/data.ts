@@ -3,7 +3,6 @@ export type Language = 'en' | 'tr';
 export interface CVData {
   name: string;
   location: string;
-  phone: string;
   email: string;
   linkedin: string;
   overview: string;
@@ -28,8 +27,7 @@ export const cvData: Record<Language, CVData> = {
   en: {
     name: "Emin BAYCAN",
     location: "Ankara, Türkiye",
-    phone: "+90 544 378 1331",
-    email: "cv@eminbaycan.com",
+    email: "Y3ZAZW1pbmJheWNhbi5jb20=",
     linkedin: "linkedin.com/in/eminbaycan",
     overview: "I am an IT professional eager to develop myself in the field of information technology, with a particular focus on network systems. I am open to learning, responsible, and adaptable to teamwork. My goal is to gain expertise in network infrastructure and communication technologies and to specialize in this field.",
     experience: [
@@ -125,8 +123,7 @@ export const cvData: Record<Language, CVData> = {
   tr: {
     name: "Emin BAYCAN",
     location: "Ankara, Türkiye",
-    phone: "+90 544 378 1331",
-    email: "cv@eminbaycan.com",
+    email: "Y3ZAZW1pbmJheWNhbi5jb20=",
     linkedin: "linkedin.com/in/eminbaycan",
     overview: "Bilişim alanında kendini geliştirmeye istekli, özellikle ağ sistemleri üzerine yoğunlaşmak isteyen bir IT çalışanıyım. Öğrenmeye açık, sorumluluk almaktan çekinmeyen ve takım çalışmasına uyum sağlayan bir yapıya sahibim. Hedefim, ağ altyapısı ve iletişim teknolojileri konusunda yetkinlik kazanarak bu alanda uzmanlaşmak.",
     experience: [
