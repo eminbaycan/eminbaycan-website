@@ -12,18 +12,37 @@ export default function App() {
   const [lang, setLang] = useState<Language>('tr');
 
   useEffect(() => {
-    const originalTitle = 'Emin Baycan | IT Professional | ';
+    // Akıcı yazı için başlık ve boşluklar
+    const originalTitle = 'Emin Baycan • IT Professional •           ';
     let currentTitle = originalTitle;
-    let intervalId: ReturnType<typeof setInterval>;
+    
+    // Favicon animasyonu için emojiler (gif gibi)
+    const emojis = ['👨‍💻', '🚀', '⚡', '💡', '🛡️', '⚙️'];
+    let faviconIndex = 0;
+    
+    let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
 
-    const scrollTitle = () => {
+    const scrollInterval = setInterval(() => {
+      // Yazı kaydırma - daha hızlı (150ms)
       currentTitle = currentTitle.substring(1) + currentTitle.substring(0, 1);
       document.title = currentTitle;
+    }, 150); 
+
+    const faviconInterval = setInterval(() => {
+      // Favicon değiştirme
+      faviconIndex = (faviconIndex + 1) % emojis.length;
+      link.href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emojis[faviconIndex]}</text></svg>`;
+    }, 800); 
+
+    return () => {
+      clearInterval(scrollInterval);
+      clearInterval(faviconInterval);
     };
-
-    intervalId = setInterval(scrollTitle, 300);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   return (

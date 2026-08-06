@@ -40,9 +40,26 @@ export function Layout({ lang, onLangChange }: LayoutProps) {
       }
     };
 
+    // DevTools Algılama (İncele / Inspect Element yapıldığında)
+    let devtoolsOpen = false;
+    const checkDevTools = () => {
+      const widthDiff = window.outerWidth - window.innerWidth > 200;
+      const heightDiff = window.outerHeight - window.innerHeight > 200;
+      if (widthDiff || heightDiff) {
+        if (!devtoolsOpen) {
+          devtoolsOpen = true;
+          navigate('/caught');
+        }
+      }
+    };
+
+    const devtoolsInterval = setInterval(checkDevTools, 500);
+    window.addEventListener('resize', checkDevTools);
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
+      clearInterval(devtoolsInterval);
+      window.removeEventListener('resize', checkDevTools);
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [navigate]);
