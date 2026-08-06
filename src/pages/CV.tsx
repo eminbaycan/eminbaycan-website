@@ -24,7 +24,7 @@ export function CV({ lang }: CVProps) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto space-y-16 print:space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
+    <div className="max-w-3xl mx-auto space-y-16 print:space-y-6 print:pt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
       <button
         onClick={() => window.print()}
         className="absolute -top-4 right-0 p-2 rounded-full hover:bg-[var(--border)] transition-colors print:hidden"

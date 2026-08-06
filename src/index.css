@@ -70,7 +70,7 @@
   }
   
   /* Hide UI elements that shouldn't be printed */
-  header, footer, button[aria-label="Back to top"], button[aria-label*="Print"], button[aria-label*="Theme"] {
+  button[aria-label="Back to top"], button[aria-label*="Print"], button[aria-label*="Theme"] {
     display: none !important;
   }
 
