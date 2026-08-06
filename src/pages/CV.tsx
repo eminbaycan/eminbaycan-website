@@ -40,7 +40,6 @@ export function CV({ lang }: CVProps) {
         {/* Screen Version */}
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-widest text-[var(--secondary)] print:hidden">
           <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {data.location}</span>
-          <span className="flex items-center gap-1.5"><Phone className="w-4 h-4" /> {data.phone}</span>
           <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> {data.email}</span>
           <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> {data.linkedin}</span>
         </div>
