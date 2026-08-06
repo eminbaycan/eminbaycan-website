@@ -34,14 +34,29 @@ export function CV({ lang }: CVProps) {
         <Printer className="w-5 h-5 opacity-60 hover:opacity-100" />
       </button>
 
-      <header className="text-center space-y-6 mt-4 sm:mt-0">
+      <header className="text-center space-y-6 print:space-y-2 mt-4 sm:mt-0 print:mt-0">
         <h1 className="text-4xl font-black tracking-tight">{data.name}</h1>
         
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-widest text-[var(--secondary)]">
+        {/* Screen Version */}
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-widest text-[var(--secondary)] print:hidden">
           <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {data.location}</span>
           <span className="flex items-center gap-1.5"><Phone className="w-4 h-4" /> {data.phone}</span>
           <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> {data.email}</span>
           <span className="flex items-center gap-1.5"><Linkedin className="w-4 h-4" /> {data.linkedin}</span>
+        </div>
+
+        {/* Print Version */}
+        <div className="hidden print:block text-[12px] text-black">
+          <div className="flex justify-center items-center gap-2">
+            <span>{data.location}</span>
+            <span className="font-bold opacity-60">|</span>
+            <span>{data.phone}</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 mt-1">
+            <span>{data.email}</span>
+            <span className="font-bold opacity-60">|</span>
+            <span>{data.linkedin}</span>
+          </div>
         </div>
       </header>
 
