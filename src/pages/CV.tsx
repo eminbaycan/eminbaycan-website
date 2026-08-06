@@ -24,7 +24,7 @@ export function CV({ lang }: CVProps) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
+    <div className="max-w-3xl mx-auto space-y-16 print:space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
       <button
         onClick={() => window.print()}
         className="absolute -top-4 right-0 p-2 rounded-full hover:bg-[var(--border)] transition-colors print:hidden"
@@ -58,9 +58,9 @@ export function CV({ lang }: CVProps) {
         <h2 className="text-[10px] uppercase tracking-widest mb-4 opacity-40 border-b border-[var(--border)] pb-2">
           {lang === 'tr' ? 'İş Deneyimi' : 'Work Experience'}
         </h2>
-        <div className="space-y-10">
+        <div className="space-y-10 print:space-y-6">
           {data.experience.map((job, idx) => (
-            <div key={idx} className="space-y-2">
+            <div key={idx} className="space-y-2 print-avoid-break">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                 <h3 className="font-medium">{job.company}</h3>
                 <span className="text-[11px] opacity-40">{job.location}</span>
@@ -83,9 +83,9 @@ export function CV({ lang }: CVProps) {
         <h2 className="text-[10px] uppercase tracking-widest mb-4 opacity-40 border-b border-[var(--border)] pb-2">
           {lang === 'tr' ? 'Eğitim' : 'Education'}
         </h2>
-        <div className="space-y-8">
+        <div className="space-y-8 print:space-y-4">
           {data.education.map((edu, idx) => (
-            <div key={idx} className="space-y-2">
+            <div key={idx} className="space-y-2 print-avoid-break">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                 <h3 className="font-medium">{edu.institution}</h3>
                 <span className="text-[11px] opacity-40">{edu.location}</span>

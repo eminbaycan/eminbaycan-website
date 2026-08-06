@@ -79,8 +79,8 @@
     print-color-adjust: exact !important;
   }
 
-  /* Prevent page breaks inside important sections */
-  section {
+  /* Prevent page breaks inside important items instead of whole sections */
+  .print-avoid-break {
     page-break-inside: avoid;
     break-inside: avoid;
   }

@@ -29,7 +29,7 @@ export const cvData: Record<Language, CVData> = {
     name: "Emin BAYCAN",
     location: "Ankara, Türkiye",
     phone: "+90 544 378 1331",
-    email: "emin_baycan@outlook.com",
+    email: "cv@eminbaycan.com",
     linkedin: "linkedin.com/in/eminbaycan",
     overview: "I am an IT professional eager to develop myself in the field of information technology, with a particular focus on network systems. I am open to learning, responsible, and adaptable to teamwork. My goal is to gain expertise in network infrastructure and communication technologies and to specialize in this field.",
     experience: [
@@ -94,22 +94,6 @@ export const cvData: Record<Language, CVData> = {
     ],
     education: [
       {
-        institution: "İstanbul University (Open education)",
-        location: "İstanbul, Turkey",
-        degree: "Web design and development",
-        period: "Aug 2023 – Ongoing",
-        details: [
-          "PHP, MySQL, Apache, Nginx, Python, Node.js, Javascript",
-          "Information Technologies",
-          "Javascript Programming",
-          "Web Design",
-          "Web Programming",
-          "Cyber Security",
-          "System Management And Cloud Informatics",
-          "Server Based Programming"
-        ]
-      },
-      {
         institution: "Çukurova University",
         location: "Adana, Turkey",
         degree: "Computer Programming",
@@ -124,6 +108,7 @@ export const cvData: Record<Language, CVData> = {
       }
     ],
     certificates: [
+      "ISO 27001:2022 Information Security Management System (BTK)",
       "İşletim Sistemlerine Giriş (BTK) – Introduction to Operating Systems",
       "Proje Yönetim Temelleri (BTK) – Fundamentals of Project Management",
       "IPv6 Teknoloji Dönüşüm İhtiyaçları ve Çalışmaları (BTK) – IPv6 Technology Transformation Requirements",
@@ -141,7 +126,7 @@ export const cvData: Record<Language, CVData> = {
     name: "Emin BAYCAN",
     location: "Ankara, Türkiye",
     phone: "+90 544 378 1331",
-    email: "emin_baycan@outlook.com",
+    email: "cv@eminbaycan.com",
     linkedin: "linkedin.com/in/eminbaycan",
     overview: "Bilişim alanında kendini geliştirmeye istekli, özellikle ağ sistemleri üzerine yoğunlaşmak isteyen bir IT çalışanıyım. Öğrenmeye açık, sorumluluk almaktan çekinmeyen ve takım çalışmasına uyum sağlayan bir yapıya sahibim. Hedefim, ağ altyapısı ve iletişim teknolojileri konusunda yetkinlik kazanarak bu alanda uzmanlaşmak.",
     experience: [
@@ -205,21 +190,6 @@ export const cvData: Record<Language, CVData> = {
     ],
     education: [
       {
-        institution: "İstanbul Üniversitesi (Açıköğretim)",
-        location: "İstanbul, Türkiye",
-        degree: "Web Tasarımı Ve Kodlama",
-        period: "Ağustos 2023 – Devam",
-        details: [
-          "PHP, MySQL, Apache, Nginx, Python, Node.js, Javascript",
-          "Javascript Programlama",
-          "Web Tasarım / Web Programlama",
-          "Siber Güvenlik",
-          "Sistem Yönetim ve Bulut Bilişim",
-          "Sunucu Tabanlı Programlama",
-          "Nesne yönelimli programlama"
-        ]
-      },
-      {
         institution: "Çukurova Üniversite",
         location: "Adana, Türkiye",
         degree: "Bilgisayar Programcılığı",
@@ -234,6 +204,7 @@ export const cvData: Record<Language, CVData> = {
       }
     ],
     certificates: [
+      "ISO 27001:2022 Bilgi Güvenliği Yönetim Sistemi (BTK)",
       "İşletim Sistemlerine Giriş (BTK)",
       "Proje Yönetim Temelleri (BTK)",
       "IPv6 Teknoloji Dönüşüm İhtiyaçları ve Çalışmaları (BTK)",
