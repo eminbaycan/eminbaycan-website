@@ -24,25 +24,6 @@ Modern, duyarlı ve performanslı kişisel web sitesi ve dijital CV uygulaması.
 
 ---
 
-## 💻 Kurulum ve Çalıştırma (Getting Started)
-
-1. **Bağımlılıkları Yükleyin:**
-   ```bash
-   npm install
-   ```
-
-2. **Geliştirme Sunucusunu Başlatın:**
-   ```bash
-   npm run dev
-   ```
-
-3. **Üretim Derlemesi Alın (Build):**
-   ```bash
-   npm run build
-   ```
-
----
-
 ## 📁 Proje Yapısı (Project Structure)
 
 ```
