@@ -20,6 +20,37 @@ export function CV({ lang }: CVProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const cvTitle = lang === 'tr' ? 'Emin-Baycan-CV-TR' : 'Emin-Baycan-CV-EN';
+
+    const handleBeforePrint = () => {
+      document.body.setAttribute('data-printing', 'true');
+      document.title = cvTitle;
+    };
+
+    const handleAfterPrint = () => {
+      document.body.removeAttribute('data-printing');
+    };
+
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('afterprint', handleAfterPrint);
+      document.body.removeAttribute('data-printing');
+    };
+  }, [lang]);
+
+  const handlePrint = () => {
+    const cvTitle = lang === 'tr' ? 'Emin-Baycan-CV-TR' : 'Emin-Baycan-CV-EN';
+    document.body.setAttribute('data-printing', 'true');
+    document.title = cvTitle;
+    setTimeout(() => {
+      window.print();
+    }, 50);
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -27,10 +58,10 @@ export function CV({ lang }: CVProps) {
   return (
     <div className="max-w-3xl mx-auto space-y-16 print:space-y-6 print:pt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
       <button
-        onClick={() => window.print()}
+        onClick={handlePrint}
         className="absolute -top-4 right-0 p-2 rounded-full hover:bg-[var(--border)] transition-colors print:hidden"
-        aria-label={lang === 'tr' ? 'CV\'yi Yazdır' : 'Print CV'}
-        title={lang === 'tr' ? 'CV\'yi Yazdır' : 'Print CV'}
+        aria-label={lang === 'tr' ? 'CV\'yi İndir / Yazdır' : 'Download / Print CV'}
+        title={lang === 'tr' ? 'CV\'yi İndir / Yazdır (PDF)' : 'Download / Print CV (PDF)'}
       >
         <Printer className="w-5 h-5 opacity-60 hover:opacity-100" />
       </button>

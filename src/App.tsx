@@ -28,6 +28,9 @@ export default function App() {
     }
 
     const scrollInterval = setInterval(() => {
+      if (document.body.getAttribute('data-printing') === 'true') {
+        return;
+      }
       // Yazı kaydırma - daha hızlı (150ms)
       currentTitle = currentTitle.substring(1) + currentTitle.substring(0, 1);
       document.title = currentTitle;
