@@ -27,21 +27,27 @@ export const cvData: Record<Language, CVData> = {
   en: {
     name: "Emin BAYCAN",
     location: "Ankara, Türkiye",
-    email: "Y3ZAZW1pbmJheWNhbi5jb20=",
+    email: "ZW1pbl9iYXljYW5Ab3V0bG9vay5jb20=",
     linkedin: "linkedin.com/in/eminbaycan",
-    overview: "I am an IT professional eager to develop myself in the field of information technology, with a particular focus on network systems. I am open to learning, responsible, and adaptable to teamwork. My goal is to gain expertise in network infrastructure and communication technologies and to specialize in this field.",
+    overview: "IT & Network Systems Professional with hands-on field experience in end-to-end deployment, configuration, and management of corporate network architectures (LAN/WAN/WLAN), Fortinet firewalls, VPN tunneling, and Windows Server environments. Skilled in managing switch/router/firewall hardware configurations, VLAN/subnet segmentation, Active Directory, and infrastructure security, dedicated to delivering uninterrupted connectivity, high network performance, and operational continuity.",
     experience: [
       {
         company: "Exodus Danışmanlık (Consulting)",
         location: "Ankara, Turkey",
         title: "IT Assistant Specialist",
-        period: "Jan 2025 – Continue",
+        period: "Feb 2025 – Continue",
         responsibilities: [
-          "Provided service desk support.",
-          "Monitored, backed up, maintained, and troubleshot client communication systems.",
-          "Managed network infrastructure (LAN, WAN, WLAN, TCP/IP).",
-          "Configured server devices (SD-WAN, Router, Firewall).",
-          "Performed hardware modifications on devices such as routers and firewalls."
+          "End-to-end management and control of in-house and inter-branch LAN, WAN, WLAN, and TCP/IP network infrastructure.",
+          "Discovery, planning, cabling, rack mounting, initial configuration, and hardware modification of switches, routers, and firewalls.",
+          "Conducting site surveys for new locations and preparing infrastructure analysis reports.",
+          "Management of VLAN configurations, subnet design, DHCP, and DNS services.",
+          "Policy management and NAT configurations on Fortinet (FortiGate) firewalls.",
+          "Setup and authorization of IPsec and SSL VPN tunnels for branch offices and remote employees.",
+          "Maintenance of Windows Server environment, Active Directory (user, group, and permission management), DNS, and DHCP.",
+          "Inventory and asset tracking of company-wide hardware, peripherals, and network devices.",
+          "Managing onboarding processes for new employees (computer provisioning, email/AD account creation, and permission assignments).",
+          "Maintenance and monitoring of security cameras (CCTV), IP telephony extension assignments, communication, and routine backup systems.",
+          "Execution of in-office end-user technical support and service desk operations."
         ]
       },
       {
@@ -123,9 +129,9 @@ export const cvData: Record<Language, CVData> = {
   tr: {
     name: "Emin BAYCAN",
     location: "Ankara, Türkiye",
-    email: "Y3ZAZW1pbmJheWNhbi5jb20=",
+    email: "ZW1pbl9iYXljYW5Ab3V0bG9vay5jb20=",
     linkedin: "linkedin.com/in/eminbaycan",
-    overview: "Bilişim alanında kendini geliştirmeye istekli, özellikle ağ sistemleri üzerine yoğunlaşmak isteyen bir IT çalışanıyım. Öğrenmeye açık, sorumluluk almaktan çekinmeyen ve takım çalışmasına uyum sağlayan bir yapıya sahibim. Hedefim, ağ altyapısı ve iletişim teknolojileri konusunda yetkinlik kazanarak bu alanda uzmanlaşmak.",
+    overview: "Kurumsal ağ mimarileri (LAN/WAN/WLAN), Fortinet güvenlik duvarı sistemleri, VPN tünelleme ve Windows Server altyapılarının uçtan uca kurulum, yapılandırma ve yönetiminde aktif saha deneyimine sahip Bilişim & Ağ Teknolojileri Uzmanıyım. Switch, Router, Firewall donanım konfigürasyonları, VLAN/Subnet mimarisi, Active Directory ve sistem güvenliği süreçlerini bütüncül olarak yöneterek; kesintisiz iletişim, yüksek ağ performansı ve kurumsal operasyonel süreklilik sağlama odaklı çalışıyorum.",
     experience: [
       {
         company: "Exodus Danışmanlık",
@@ -133,11 +139,17 @@ export const cvData: Record<Language, CVData> = {
         title: "Bilgi Teknolojileri / IT Uzman Yardımcısı",
         period: "Şubat 2025 – Devam",
         responsibilities: [
-          "Servis masası desteği",
-          "Müşteri iletişim sistemlerinin kontrolü, yedeklenmesi, bakımı ve sorun giderme.",
-          "Ağ altyapısının (LAN, WAN, WLAN, TCP/IP), kontrolü.",
-          "Sunucu cihazları (SD-WAN, Router, Firewall) yapılandırılması.",
-          "Router ve Firewall gibi cihazların donanım modifikasyonu."
+          "Şirket içi ve şubeler arası LAN, WAN, WLAN ve TCP/IP ağ altyapısının uçtan uca yönetimi ve kontrolü.",
+          "Switch, Router ve Firewall cihazlarının keşif, planlama, kablolama, rack montajı, ilk konfigürasyonu ve donanım modifikasyonu.",
+          "Yeni lokasyonlar için saha keşiflerinin yapılması ve altyapı analiz raporlarının çıkarılması.",
+          "VLAN yapılandırmaları, Subnet yönetimi, DHCP ve DNS servislerinin yönetimi.",
+          "Fortinet (FortiGate) güvenlik duvarı üzerinden kural (policy) yönetimi ve NAT yapılandırmaları.",
+          "Şubeler ve uzaktaki çalışanlar için IPsec / SSL VPN tünellerinin kurulumu ve yetkilendirilmesi.",
+          "Windows Server ortamı, Active Directory (kullanıcı, grup ve yetki yönetimi), DNS ve DHCP bakımı.",
+          "Şirket genelindeki donanım, çevre birimleri ve ağ cihazlarının envanter ve zimmet takibi.",
+          "Yeni personel başlangıç süreçleri (bilgisayar kurulumu, mail/AD hesap açılışları ve yetkilendirmeler).",
+          "Güvenlik kameraları (CCTV) bakım/kontrolü, IP telefon dahili hat atamaları, iletişim ve yedekleme sistemlerinin rutin takibi.",
+          "Ofis içi son kullanıcı teknik destek ve servis masası operasyonlarının yürütülmesi."
         ]
       },
       {
